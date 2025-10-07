@@ -46,11 +46,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 2rem;
+            padding: 16px 32px;
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 24px;
             font-weight: bold;
             color: var(--accent);
         }
@@ -58,7 +58,7 @@
         nav ul {
             list-style: none;
             display: flex;
-            gap: 2rem;
+            gap: 32px;
         }
 
             nav ul li a {
@@ -89,7 +89,7 @@
                 }
 
         section {
-            padding: 6rem 2rem;
+            padding: 96px 32px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -101,14 +101,14 @@
         }
 
             .hero h1 {
-                font-size: 3rem;
+                font-size: 48px;
                 color: var(--text-light);
-                margin-bottom: 1rem;
+                margin-bottom: 16px;
             }
 
             .hero p {
                 color: var(--text-dark);
-                font-size: 1.2rem;
+                font-size: 19px;
                 max-width: 700px;
                 margin: 0 auto;
             }
@@ -119,8 +119,8 @@
         }
 
         .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
+            font-size: 40px;
+            margin-bottom: 48px;
             color: var(--text-light);
             position: relative;
             display: inline-block;
@@ -139,8 +139,8 @@
         .team-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 32px;
+            margin-top: 48px;
         }
 
         .team-member {
@@ -164,79 +164,92 @@
         }
 
         .member-info {
-            padding: 1.5rem;
+            padding: 24px;
         }
 
         .member-name {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 24px;
+            margin-bottom: 8px;
             color: var(--text-light);
         }
 
         .member-id {
             color: var(--accent);
             font-weight: 500;
-            margin-bottom: 1rem;
+            margin-bottom: 16px;
         }
 
         .member-desc {
             color: var(--text-dark);
-            font-size: 0.9rem;
+            font-size: 14.5px;
         }
 
         /* Info Section */
         .info-section {
-            margin-top: 4rem;
+            margin-top: 64px;
         }
 
         .info-card {
             background-color: var(--medium-blue);
             border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
+            padding: 32px;
+            margin-bottom: 32px;
         }
 
             .info-card h3 {
                 color: var(--accent);
-                font-size: 1.5rem;
-                margin-bottom: 1rem;
+                font-size: 24px;
+                margin-bottom: 16px;
             }
 
             .info-card p {
                 color: var(--text-dark);
-                margin-bottom: 0.5rem;
+                margin-bottom: 8px;
             }
 
         /* Footer */
         footer {
             background-color: var(--medium-blue);
             text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
+            padding: 32px;
+            margin-top: 64px;
         }
 
             footer p {
                 color: var(--text-dark);
-                font-size: 0.9rem;
+                font-size: 14.5px;
             }
 
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.2rem;
+                font-size: 35.5px;
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 32px;
             }
 
             nav ul {
-                gap: 1rem;
+                gap: 16px;
             }
         }
 
         .info-container{
             scroll-margin: 200px;
         }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+            a:visited,
+            a:hover,
+            a:active {
+                text-decoration: none;
+                color: inherit;
+            }
+
     </style>
 </head>
 <body>
@@ -244,7 +257,7 @@
     <!-- Header -->
     <header>
         <div class="nav-container">
-            <div class="logo">NhómXYZ</div>
+            <div class="logo">Nhóm K2P</div>
             <nav>
                 <ul>
                     <li><a href="#home">Trang chủ</a></li>
@@ -266,20 +279,20 @@
         <div class="team-grid">
             <a href="#info1">
                 <div class="team-member">
-                    <img src="Assets/img1.jpg" class="member-photo" alt="Thành viên 1">
+                    <img src="Assets/kan.jpg" class="member-photo" alt="Thành viên 1">
                     <div class="member-info">
-                        <h3 class="member-name">Lâm Nhật Phong</h3>
-                        <p class="member-id">23120321</p>
+                        <h3 class="member-name">Nguyễn Lê Quang Kan</h3>
+                        <p class="member-id">MSSV: 23120279</p>
                     </div>
                 </div>
             </a>
 
             <a href="#info2">
                 <div class="team-member">
-                    <img src="Assets/img2.jpg" class="member-photo" alt="Thành viên 2">
+                    <img src="Assets/phong.jpg" class="member-photo" alt="Thành viên 2">
                     <div class="member-info">
-                        <h3 class="member-name">Lê Thanh Phong</h3>
-                        <p class="member-id">23120322</p>
+                        <h3 class="member-name">Lâm Nhật Phong</h3>
+                        <p class="member-id">MSSV: 23120321</p>
                     </div>
                 </div>
             </a>
@@ -288,8 +301,8 @@
                 <div class="team-member">
                     <img src="Assets/img3.jpg" class="member-photo" alt="Thành viên 3">
                     <div class="member-info">
-                        <h3 class="member-name">Lê Văn C</h3>
-                        <p class="member-id">Lập trình viên</p>
+                        <h3 class="member-name">Lê Thanh Phong</h3>
+                        <p class="member-id">MSSV: 23120322</p>
                     </div>
                 </div>
             </a>
@@ -301,31 +314,32 @@
         <h2 class="section-title">Thông tin chi tiết</h2>
         <div id="info1" class="info-container">
             <div class="info-card">
-                <h3>Lâm Nhật Phong</h3>
-                <p>MSSV: 23120321</p> <br />
+                <h3>Nguyễn Lê Quang Kan</h3>
+                <p>MSSV: 23120279</p>
                 <p>Chuyên ngành: Kỹ thuật phần mềm</p>
             </div>
         </div>
 
         <div id="info2" class="info-container">
             <div class="info-card">
-                <h3>Lê Thanh Phong</h3>
+                <h3>Lâm Nhật Phong</h3>
+                <p>MSSV: 23120321</p>
+                <p>Chuyên ngành: Kỹ thuật phần mềm</p>
             </div>
         </div>
 
         <div id="info3" class="info-container">
             <div class="info-card">
-                <h3>Lê Văn C</h3>
-                <p>Lập trình viên frontend với 3 năm kinh nghiệm, đam mê công nghệ web hiện đại.</p>
-                <p>Kỹ năng: HTML, CSS, JavaScript, React, TypeScript</p>
-                <p>Dự án nổi bật: Ứng dụng quản lý tài chính, website thương mại điện tử.</p>
+                <h3>Lê Thanh Phong</h3>
+                <p>MSSV: 23120322</p>
+                <p>Chuyên ngành: Kỹ thuật phần mềm</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2025 NhómXYZ. Tất cả các quyền được bảo lưu.</p>
+        <p>&copy; Nhóm K2P</p>
     </footer>
 
 </body>
