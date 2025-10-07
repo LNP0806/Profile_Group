@@ -11,6 +11,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
         }
 
         :root {
@@ -28,6 +29,65 @@
             line-height: 1.6;
         }
 
+        /* Header (Navigation) */
+        header {
+            background-color: var(--medium-blue);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+            nav ul li a {
+                text-decoration: none;
+                color: var(--text-light);
+                font-weight: 500;
+                position: relative;
+                transition: color 0.3s ease;
+            }
+
+                nav ul li a:hover {
+                    color: var(--accent);
+                }
+
+                nav ul li a::after {
+                    content: '';
+                    position: absolute;
+                    width: 0;
+                    height: 2px;
+                    background-color: var(--accent);
+                    bottom: -5px;
+                    left: 0;
+                    transition: width 0.3s ease;
+                }
+
+                nav ul li a:hover::after {
+                    width: 100%;
+                }
+
         section {
             padding: 6rem 2rem;
             max-width: 1200px;
@@ -37,7 +97,7 @@
         /* Hero Section */
         .hero {
             text-align: center;
-            margin-top: 60px;
+            margin-top: 100px;
         }
 
             .hero h1 {
@@ -147,9 +207,18 @@
                 margin-bottom: 0.5rem;
             }
 
-        .info-container {
-            scroll-margin: 150px;
+        /* Footer */
+        footer {
+            background-color: var(--medium-blue);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
         }
+
+            footer p {
+                color: var(--text-dark);
+                font-size: 0.9rem;
+            }
 
         @media (max-width: 768px) {
             .hero h1 {
@@ -159,10 +228,28 @@
             .section-title {
                 font-size: 2rem;
             }
+
+            nav ul {
+                gap: 1rem;
+            }
         }
     </style>
 </head>
 <body>
+
+    <!-- Header -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">NhómXYZ</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Trang chủ</a></li>
+                    <li><a href="#team">Thành viên</a></li>
+                    <li><a href="#info1">Thông tin</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
     <!-- Trang chủ -->
     <section id="home" class="hero">
@@ -238,6 +325,11 @@
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 NhómXYZ. Tất cả các quyền được bảo lưu.</p>
+    </footer>
 
 </body>
 </html>
