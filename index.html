@@ -3,337 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nhóm của chúng tôi</title>
+    <title>Nhóm của tôi</title>
     <style>
-        /* Reset */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-        }
-
-        :root {
-            --dark-blue: #0a192f;
-            --medium-blue: #112240;
-            --light-blue: #233554;
-            --accent: #64ffda;
-            --text-light: #ccd6f6;
-            --text-dark: #8892b0;
-        }
-
-        body {
-            background-color: var(--dark-blue);
-            color: var(--text-light);
-            line-height: 1.6;
-        }
-
-        /* Header (Navigation) */
-        header {
-            background-color: var(--medium-blue);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
-
-        .logo {
-            font-size: 1.5rem;
+        /* ===== HEADER & FOOTER ===== */
+        header, footer {
+            background-color: #233554;
+            color: #64ffda;
+            text-align: center;
+            padding: 15px 0;
             font-weight: bold;
-            color: var(--accent);
         }
 
-        nav ul {
-            list-style: none;
+        footer {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        /* ===== TEAM SECTION ===== */
+        .team {
             display: flex;
-            gap: 2rem;
-        }
-
-            nav ul li a {
-                text-decoration: none;
-                color: var(--text-light);
-                font-weight: 500;
-                position: relative;
-                transition: color 0.3s ease;
-            }
-
-                nav ul li a:hover {
-                    color: var(--accent);
-                }
-
-                nav ul li a::after {
-                    content: '';
-                    position: absolute;
-                    width: 0;
-                    height: 2px;
-                    background-color: var(--accent);
-                    bottom: -5px;
-                    left: 0;
-                    transition: width 0.3s ease;
-                }
-
-                nav ul li a:hover::after {
-                    width: 100%;
-                }
-
-        section {
-            padding: 6rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        /* Hero Section */
-        .hero {
-            text-align: center;
-            margin-top: 100px;
-        }
-
-            .hero h1 {
-                font-size: 3rem;
-                color: var(--text-light);
-                margin-bottom: 1rem;
-            }
-
-            .hero p {
-                color: var(--text-dark);
-                font-size: 1.2rem;
-                max-width: 700px;
-                margin: 0 auto;
-            }
-
-        /* Team Section */
-        .team-section {
-            text-align: center;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: var(--text-light);
-            position: relative;
-            display: inline-block;
-        }
-
-            .section-title::after {
-                content: '';
-                position: absolute;
-                width: 60%;
-                height: 2px;
-                background-color: var(--accent);
-                bottom: -10px;
-                left: 20%;
-            }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 30px;
         }
 
         .team-member {
-            background-color: var(--medium-blue);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
+            text-align: center;
+            width: 200px;
         }
-
-            .team-member:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            }
 
         .member-photo {
-            width: 100%;
-            height: 300px;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
             object-fit: cover;
-            border-bottom: 2px solid var(--light-blue);
+            cursor: pointer;
+            border: 3px solid #64ffda;
+            transition: transform 0.3s;
         }
 
-        .member-info {
-            padding: 1.5rem;
-        }
-
-        .member-name {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-        }
-
-        .member-role {
-            color: var(--accent);
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-
-        .member-desc {
-            color: var(--text-dark);
-            font-size: 0.9rem;
-        }
-
-        /* Info Section */
-        .info-section {
-            margin-top: 4rem;
-        }
-
-        .info-card {
-            background-color: var(--medium-blue);
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-
-            .info-card h3 {
-                color: var(--accent);
-                font-size: 1.5rem;
-                margin-bottom: 1rem;
+            .member-photo:hover {
+                transform: scale(1.05);
             }
 
-            .info-card p {
-                color: var(--text-dark);
-                margin-bottom: 0.5rem;
+        /* ===== POPUP STYLE ===== */
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .popup:target {
+                display: flex;
             }
 
-        /* Footer */
-        footer {
-            background-color: var(--medium-blue);
+        .popup-content {
+            background: #fff;
+            color: #233554;
+            padding: 20px;
+            border-radius: 15px;
+            width: 300px;
+            max-width: 90%;
             text-align: center;
-            padding: 2rem;
-            margin-top: 4rem;
+            position: relative;
+            animation: fadeIn 0.3s ease;
         }
 
-            footer p {
-                color: var(--text-dark);
-                font-size: 0.9rem;
+            .popup-content img {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                border: 3px solid #64ffda;
+                margin-bottom: 10px;
             }
 
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-            }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
         }
 
-        .info-container{
-            scroll-margin: 200px;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
         }
     </style>
 </head>
 <body>
-
-    <!-- Header -->
     <header>
-        <div class="nav-container">
-            <div class="logo">NhómXYZ</div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Trang chủ</a></li>
-                    <li><a href="#team">Thành viên</a></li>
-                    <li><a href="#info1">Thông tin</a></li>
-                </ul>
-            </nav>
-        </div>
+        NHÓM PHÁT TRIỂN PHẦN MỀM
     </header>
 
-    <!-- Trang chủ -->
-    <section id="home" class="hero">
-        <h1>Chào mừng đến với nhóm của chúng tôi</h1>
-        <p>Chúng tôi là một nhóm đam mê công nghệ, luôn hướng tới sự sáng tạo và hiệu quả trong mọi dự án.</p>
-    </section>
-
-    <!-- Thành viên -->
-    <section id="team" class="team-section">
-        <h2 class="section-title">Thành viên nhóm</h2>
-        <div class="team-grid">
+    <section class="team">
+        <div class="team-member">
             <a href="#info1">
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/300x300/233554/64ffda?text=Thành+viên+1" class="member-photo" alt="Thành viên 1">
-                    <div class="member-info">
-                        <h3 class="member-name">Nguyễn Văn A</h3>
-                        <p class="member-role">Trưởng nhóm</p>
-                        <p class="member-desc">5 năm kinh nghiệm phát triển phần mềm và quản lý dự án.</p>
-                    </div>
-                </div>
+                <img src="https://via.placeholder.com/200x200/233554/64ffda?text=Thành+viên+1" alt="Thành viên 1" class="member-photo">
             </a>
+            <p>Thành viên 1</p>
+        </div>
 
+        <div class="team-member">
             <a href="#info2">
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/300x300/233554/64ffda?text=Thành+viên+2" class="member-photo" alt="Thành viên 2">
-                    <div class="member-info">
-                        <h3 class="member-name">Trần Thị B</h3>
-                        <p class="member-role">Nhà thiết kế</p>
-                        <p class="member-desc">Thiết kế UI/UX sáng tạo và tối ưu trải nghiệm người dùng.</p>
-                    </div>
-                </div>
+                <img src="https://via.placeholder.com/200x200/233554/64ffda?text=Thành+viên+2" alt="Thành viên 2" class="member-photo">
             </a>
-
-            <a href="#info3">
-                <div class="team-member">
-                    <img src="https://via.placeholder.com/300x300/233554/64ffda?text=Thành+viên+3" class="member-photo" alt="Thành viên 3">
-                    <div class="member-info">
-                        <h3 class="member-name">Lê Văn C</h3>
-                        <p class="member-role">Lập trình viên</p>
-                        <p class="member-desc">Frontend developer với kỹ năng mạnh về JavaScript và React.</p>
-                    </div>
-                </div>
-            </a>
+            <p>Thành viên 2</p>
         </div>
     </section>
 
-    <!-- Thông tin chi tiết -->
-    <section class="info-section">
-        <div id="info1" class="info-container">
-            <div class="info-card">
-                <h3>Nguyễn Văn A</h3>
-                <p>Trưởng nhóm với hơn 5 năm kinh nghiệm trong lĩnh vực phần mềm.</p>
-                <p>Kỹ năng: JavaScript, React, Node.js, Quản lý dự án</p>
-                <p>Dự án nổi bật: Ứng dụng thương mại điện tử, hệ thống quản lý doanh nghiệp.</p>
-            </div>
+    <!-- POPUP CHI TIẾT -->
+    <div id="info1" class="popup">
+        <div class="popup-content">
+            <a href="#" class="close">&times;</a>
+            <img src="https://via.placeholder.com/200x200/233554/64ffda?text=Thành+viên+1" alt="Thành viên 1">
+            <h3>Thành viên 1</h3>
+            <p>Vai trò: Trưởng nhóm</p>
+            <p>Kỹ năng: C++, C#, SQL</p>
         </div>
+    </div>
 
-        <div id="info2" class="info-container">
-            <div class="info-card">
-                <h3>Trần Thị B</h3>
-                <p>Nhà thiết kế UI/UX với 4 năm kinh nghiệm, chuyên nghiên cứu hành vi người dùng.</p>
-                <p>Kỹ năng: Figma, Adobe XD, Photoshop, Illustrator</p>
-                <p>Dự án nổi bật: Ứng dụng ngân hàng online, nền tảng giáo dục số.</p>
-            </div>
+    <div id="info2" class="popup">
+        <div class="popup-content">
+            <a href="#" class="close">&times;</a>
+            <img src="https://via.placeholder.com/200x200/233554/64ffda?text=Thành+viên+2" alt="Thành viên 2">
+            <h3>Thành viên 2</h3>
+            <p>Vai trò: Lập trình viên</p>
+            <p>Kỹ năng: HTML, CSS, JS</p>
         </div>
+    </div>
 
-        <div id="info3" class="info-container">
-            <div class="info-card">
-                <h3>Lê Văn C</h3>
-                <p>Lập trình viên frontend với 3 năm kinh nghiệm, đam mê công nghệ web hiện đại.</p>
-                <p>Kỹ năng: HTML, CSS, JavaScript, React, TypeScript</p>
-                <p>Dự án nổi bật: Ứng dụng quản lý tài chính, website thương mại điện tử.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 NhómXYZ. Tất cả các quyền được bảo lưu.</p>
+        © 2025 Nhóm phát triển phần mềm
     </footer>
-
 </body>
 </html>
