@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhóm của chúng tôi</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --dark-blue: #0a192f;
+            --medium-blue: #112240;
+            --light-blue: #233554;
+            --accent: #64ffda;
+            --text-light: #ccd6f6;
+            --text-dark: #8892b0;
+        }
+
+        body {
+            background-color: var(--dark-blue);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-top: 60px;
+        }
+
+            .hero h1 {
+                font-size: 3rem;
+                color: var(--text-light);
+                margin-bottom: 1rem;
+            }
+
+            .hero p {
+                color: var(--text-dark);
+                font-size: 1.2rem;
+                max-width: 700px;
+                margin: 0 auto;
+            }
+
+        /* Team Section */
+        .team-section {
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--text-light);
+            position: relative;
+            display: inline-block;
+        }
+
+            .section-title::after {
+                content: '';
+                position: absolute;
+                width: 60%;
+                height: 2px;
+                background-color: var(--accent);
+                bottom: -10px;
+                left: 20%;
+            }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .team-member {
+            background-color: var(--medium-blue);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+            .team-member:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+
+        .member-photo {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-bottom: 2px solid var(--light-blue);
+        }
+
+        .member-info {
+            padding: 1.5rem;
+        }
+
+        .member-name {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+        }
+
+        .member-role {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .member-desc {
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+
+        /* Info Section */
+        .info-section {
+            margin-top: 4rem;
+        }
+
+        .info-card {
+            background-color: var(--medium-blue);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+            .info-card h3 {
+                color: var(--accent);
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            .info-card p {
+                color: var(--text-dark);
+                margin-bottom: 0.5rem;
+            }
+
+        .info-container {
+            scroll-margin: 150px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Trang chủ -->
+    <section id="home" class="hero">
+        <h1>Chào mừng đến với nhóm của chúng tôi</h1>
+        <p>Chúng tôi là một nhóm đam mê công nghệ, luôn hướng tới sự sáng tạo và hiệu quả trong mọi dự án.</p>
+    </section>
+
+    <!-- Thành viên -->
+    <section id="team" class="team-section">
+        <h2 class="section-title">Thành viên nhóm</h2>
+        <div class="team-grid">
+            <a href="#info1">
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/300x300/233554/64ffda?text=Thành+viên+1" class="member-photo" alt="Thành viên 1">
+                    <div class="member-info">
+                        <h3 class="member-name">Nguyễn Văn A</h3>
+                        <p class="member-role">Trưởng nhóm</p>
+                        <p class="member-desc">5 năm kinh nghiệm phát triển phần mềm và quản lý dự án.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#info2">
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/300x300/233554/64ffda?text=Thành+viên+2" class="member-photo" alt="Thành viên 2">
+                    <div class="member-info">
+                        <h3 class="member-name">Trần Thị B</h3>
+                        <p class="member-role">Nhà thiết kế</p>
+                        <p class="member-desc">Thiết kế UI/UX sáng tạo và tối ưu trải nghiệm người dùng.</p>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#info3">
+                <div class="team-member">
+                    <img src="https://via.placeholder.com/300x300/233554/64ffda?text=Thành+viên+3" class="member-photo" alt="Thành viên 3">
+                    <div class="member-info">
+                        <h3 class="member-name">Lê Văn C</h3>
+                        <p class="member-role">Lập trình viên</p>
+                        <p class="member-desc">Frontend developer với kỹ năng mạnh về JavaScript và React.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Thông tin chi tiết -->
+    <section class="info-section">
+        <div id="info1" class="info-container">
+            <div class="info-card">
+                <h3>Nguyễn Văn A</h3>
+                <p>Trưởng nhóm với hơn 5 năm kinh nghiệm trong lĩnh vực phần mềm.</p>
+                <p>Kỹ năng: JavaScript, React, Node.js, Quản lý dự án</p>
+                <p>Dự án nổi bật: Ứng dụng thương mại điện tử, hệ thống quản lý doanh nghiệp.</p>
+            </div>
+        </div>
+
+        <div id="info2" class="info-container">
+            <div class="info-card">
+                <h3>Trần Thị B</h3>
+                <p>Nhà thiết kế UI/UX với 4 năm kinh nghiệm, chuyên nghiên cứu hành vi người dùng.</p>
+                <p>Kỹ năng: Figma, Adobe XD, Photoshop, Illustrator</p>
+                <p>Dự án nổi bật: Ứng dụng ngân hàng online, nền tảng giáo dục số.</p>
+            </div>
+        </div>
+
+        <div id="info3" class="info-container">
+            <div class="info-card">
+                <h3>Lê Văn C</h3>
+                <p>Lập trình viên frontend với 3 năm kinh nghiệm, đam mê công nghệ web hiện đại.</p>
+                <p>Kỹ năng: HTML, CSS, JavaScript, React, TypeScript</p>
+                <p>Dự án nổi bật: Ứng dụng quản lý tài chính, website thương mại điện tử.</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
